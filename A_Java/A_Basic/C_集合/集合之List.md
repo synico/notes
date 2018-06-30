@@ -7,10 +7,10 @@ Add：调用add方法向列表添加元素时，如果添加位置在数组末�
 Remove：调用remove方法删除列表中元素时，如果根据元素在列表中位置 (数组下标) 来删除，仅需要复制移动数组剩余元素。如果通过对象引用来删除该对象，需要先遍历数组来确定该对象位置，然后根据其位置来删除，并复制移动数组剩余元素。  
 元素类型：可以添加null到列表。  
 
-1. 除了实现List接口，还实现了RandomAccess接口。
-2. 两个ArrayList equals表示两个ArrayList含有相同的元素，并且元素的顺序相同。
-3. 在ArrayList的末尾添加删除元素效率高。基于效率的考虑，避免使用contains， index，remove(Object)，removeAll和retainAll。
-4. ArrayList仅有trimToSize方法可以压缩它的容量，而clear或remove*方法只能改变其长度。
+* 除了实现List接口，还实现了RandomAccess接口。
+* 两个ArrayList equals表示两个ArrayList含有相同的元素，并且元素的顺序相同。
+* 在ArrayList的末尾添加删除元素效率高。基于效率的考虑，避免使用contains， index，remove(Object)，removeAll和retainAll。
+* ArrayList仅有trimToSize方法可以压缩它的容量，而clear或remove*方法只能改变其长度。
 ***
 
 ### LinkedList
@@ -20,10 +20,10 @@ Add：将元素添加到任何位置都不需要移动链表中其他元素。�
 Remove：调用remove方法移除链表中元素，仅需遍历链表找到要移出元素位置，不需要复制移动链表其他元素。  
 元素类型：可以添加null到链表。  
 
-1. 使用LinkedList的唯一原因是需要在列表中间频繁添加删除元素。
-2. 不要使用LinkedList中任何接受或返回元素位置 (index) 的方法。
-3. 除了实现List接口，还实现了Deque接口。如要实现FIFO，使用ArrayDeque是更好的选择。
-4. 两个LinkedList equals表示两个LinkedList含有相同的元素，并且元素的顺序相同。
+* 使用LinkedList的唯一原因是需要在列表中间频繁添加删除元素。
+* 不要使用LinkedList中任何接受或返回元素位置 (index) 的方法。
+* 除了实现List接口，还实现了Deque接口。如要实现FIFO，使用ArrayDeque是更好的选择。
+* 两个LinkedList equals表示两个LinkedList含有相同的元素，并且元素的顺序相同。
 ***
 
 ### 数组和链表
