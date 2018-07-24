@@ -29,3 +29,8 @@ psql -U username -h dbHost -p dbPort -d dbName
 ```
 \q
 ```
+
+#### 运行sql脚本
+```
+psql -h localhost -U postgres -f createdb.sql
+```
