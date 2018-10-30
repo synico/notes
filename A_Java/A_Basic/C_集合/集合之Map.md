@@ -2,13 +2,23 @@
 
 #### HashMap
 * Map中键值K是唯一的，如果对同一个键值两次调用put方法，第二个加入的值V会覆盖第一个值。允许key和value为null。
-* 如果HashMap太满 (当前load factor大于预设值) ，就需要对HashMap执行rehash操作。rehash的过程是创建一个新的HashMap，并将原Map中所有元素添加到新Map中，然后丢弃原Map。
+* HashMap在new后并不会立即分配bucket数组，而是第一次put时初始化，类似ArrayList在第一次add时分配空间。
+* HashMap的bucket数组大小，即桶数一定是2的幂，如果创建时指定的容量不是2的幂，则实际容量是最接近 (大于) 指定容量的2的幂。
+* HashMap在put的元素数量大于capacity * loadfactor时，需要对HashMap执行rehash操作。rehash的过程是创建一个新的HashMap，并将原Map中所有元素添加到新Map中，然后丢弃原Map。
 * 要同时查看键与值，可以通过枚举各个条目 (Map.Entry) 查看，避免对值进行查找。
 * 获取HashMap的大小不需要遍历Map。
 ##### JDK7实现
-* HashMap采用位桶 (数组) 加链表实现。要查找表中元素的位置，先通过元素的hashcode方法计算出它的hashcode，然后与桶的总数取余，所得到的结果就是这个元素所在桶的索引 (hash算法) ，然后顺序遍历链表获取期望元素。
+* HashMap采用位桶 (bucket数组) 加链表实现。要查找表中元素的位置，先通过元素的hashcode方法计算出它的hashcode，然后与桶的总数取余，所得到的结果就是这个元素所在桶的索引 (hash算法) ，然后顺序遍历链表获取期望元素。
 ##### JDK8实现
-* JDK8中HashMap被重新实现。采用位桶 (数组) 加链表或红黑树作为存储数据结构。如链表长度超过TREEIFY_THRESHOLD (8) 的值，则HashMap的数据将会从链表数组转化为树。即rehash时采用了不同与以往的方式进行rehash。
+* JDK8中HashMap被重新实现。采用位桶 (bucket数组) 加链表或红黑树作为存储数据结构。如链表长度超过TREEIFY_THRESHOLD (8) 的值，则HashMap的数据将会从链表数组转化为树。即rehash时采用了不同与以往的方式进行rehash。
+##### JDK8中HashMap的put函数操作
+* 对key的hashCode()进行hash后计算数组下标index；
+* 如果当前数组table为null，进行resize() 初始化；
+* 如果没有碰撞直接放到对应下标的bucket里；
+* 如果碰撞了，且节点已经存在，就替换掉value；
+* 如果碰撞后发现为树结构，挂载到树上；
+* 如果碰撞后发现为链表，添加到链表尾，并判断链表如果过长，就把链表转换成树结构；
+* 数据加入后，如果数据量超过threshold，就需要resize。
 ***
 
 #### LinkedHashMap
