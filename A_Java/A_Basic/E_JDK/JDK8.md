@@ -36,4 +36,19 @@ JDK8中的时间类都是线程安全的不可变类型
 #### Instant代替Date
 #### LocalDateTime代替Calendar
 #### DateTimeFormatter代替SimpleDateFormat
+
+#### java.time
+主要提供dates，times，instants和durations的API。
+* Instant - a timestamp, is the closest equivalent class to java.util.Date
+* LocalDate - a date without a time, or any reference to an offset or time-zone
+* LocalTime - a time without a date, or any reference to an offset or time-zone
+* LocalDateTime - combines date and time, but still without any offset or time-zone
+* ZonedDateTime - a full date-time with time-zone and resolved offset from UTC/Greenwich, is the closest equivalent class to java.util.GregorianCalendar
+* Duration - a time-based amount of time
+* Period - a date-based amount of time
+
+#### java.time.chrono
+#### java.time.format
+#### java.time.temporal
+#### java.time.zone
 ***
