@@ -24,3 +24,9 @@
   </dependencies>
 </dependencyManagement>
 ```
+
+### 运行程序
+#### 远程调试
+```
+java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n -jar target/yourapp.jar
+```
