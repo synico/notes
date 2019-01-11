@@ -1,6 +1,9 @@
 ## CentOS
 
 ### 防火墙
+#### firewalld
+/etc/firewalld/zones
+
 #### firewall-cmd
 * 查看所有打开的端口
 ```
@@ -46,3 +49,24 @@ firewall-cmd --zone=public --query-port=80/tcp
 ```
 firewall-cmd --zone=public --remove-port=80/tcp --permanent
 ```
+***
+
+### 安装使用docker
+#### 通过rpm包安装docker
+```
+sudo yum install docker.rpm
+```
+#### 通过rpm包升级docker
+```
+sudo yum -y upgrade
+```
+#### 启动docker
+```
+sudo systemctl start docker
+```
+#### 设置开机启动
+```
+sudo systemctl enable docker
+sudo systemctl disable docker
+```
+***
