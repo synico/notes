@@ -23,6 +23,7 @@ int|ordinal()|返回枚举常量序数，即枚举常量声明处常量的位置
 #### 编译器生成的valueOf方法
 * 编译器生成的valueOf方法为valueOf(String name)，而Enum中定义的为valueOf(Class<T> enumType, String name)。
 * 由于valueOf(String name)是由编译器插入到枚举类中的static方法，如果将枚举类型向上转型，那么valueOf方法则无法被调用。values方法同理。
+* valueOf(String name)的参数name为枚举类型的字面量的值。
 ***
 
 #### 为枚举类型添加方法
