@@ -19,6 +19,33 @@
 * 如果碰撞后发现为树结构，挂载到树上；
 * 如果碰撞后发现为链表，添加到链表尾，并判断链表如果过长，就把链表转换成树结构；
 * 数据加入后，如果数据量超过threshold，就需要resize。
+##### 遍历
+* 普通使用，两次取值
+```
+for(Stirng key : map.keySet()) {
+    System.out.println(key + "|" + map.get(key));
+}
+```
+* 通过Map.entrySet使用interator遍历key和value
+```
+Iterator it = map.entrySet().iterator();
+while(it.hasNext()) {
+    Map.Entry<String, String> entry = (Entry<String, String>)it.next();
+    System.out.println(entry.getKey() + "|" + entry.getValue());
+}
+```
+* 推荐，尤其容量大时
+```
+for(Map.Entry<String, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + "|" + entry.getValue());
+}
+```
+* 通过Map.values()遍历所有value，不能遍历key
+```
+for(String v : map.values()) {
+    System.out.println(v);
+}
+```
 ***
 
 #### LinkedHashMap
