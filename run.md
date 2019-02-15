@@ -1,3 +1,9 @@
+## 201902
+Date|Distance(km)|Time(min)|avg(BPM)|max(BPM)
+:--|:--|:--|:--|:--
+0215|6.92|40|171|188
+0213|5.85|35|170|184
+
 ## 201901
 Date|Distance(km)|Time(min)|avg(BPM)|max(BPM)
 :--|:--|:--|:--|:--
