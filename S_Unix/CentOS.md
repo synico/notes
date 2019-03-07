@@ -70,3 +70,18 @@ sudo systemctl enable docker
 sudo systemctl disable docker
 ```
 ***
+
+### 修改主机名
+#### hostnamectl
+通过hostnamectl命令修改主机名，立即生效并且重启也生效。
+```
+hostnamectl set-hostname nick.vbox.com
+```
+#### /etc/hosts
+直接修改/etc/hosts文件，需要重启后生效
+```
+127.0.0.1         nick.vbox.com
+或
+192.168.56.103    nick.vbox.com
+```
+***
