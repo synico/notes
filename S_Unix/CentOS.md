@@ -1,5 +1,24 @@
 ## CentOS
 
+### 换源
+#### 备份本地yum源
+```
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+```
+#### 替换yum源文件
+```
+wget -O /etc/yum.repos.d/CentOS-Base.repo  http://mirrors.aliyun.com/repo/Centos-7.repo
+```
+#### 更新cache
+```
+yum makecache
+```
+#### 查看
+```
+yum -y update
+```
+***
+
 ### 防火墙
 #### firewalld
 /etc/firewalld/zones
