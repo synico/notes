@@ -34,3 +34,13 @@ psql -U username -h dbHost -p dbPort -d dbName
 ```
 psql -h localhost -U postgres -f createdb.sql
 ```
+
+#### 备份数据库
+```
+pg_dump -h db_ip -U postgres database_name > dump.file
+```
+
+#### 恢复数据库
+```
+psql -h localhost -U postgres -d database_name < dump.file
+```
