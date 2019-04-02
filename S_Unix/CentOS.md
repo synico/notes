@@ -104,3 +104,70 @@ hostnamectl set-hostname nick.vbox.com
 192.168.56.103    nick.vbox.com
 ```
 ***
+
+### 安装网络工具
+#### 查找软件
+```
+yum search [software_name]
+yum search all [software_name]
+```
+#### 安装net-tools
+```
+yum install net-tools.x86_64
+```
+#### 安装openssh
+```
+yum install openssh*
+```
+
+### virtualbox安装centos7
+#### 开启有线网络连接
+默认情况下centos7 minimal不会开始有线网络连接，需要修改/etc/sysconfig/network-scripts下网卡对应的配置文件。
+```
+[root@localhost network-scripts]# ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::d056:251a:327a:388f  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:54:49:c6  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 2350 (2.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 34  bytes 3109 (3.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.101  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::7597:612:8a07:5e04  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:22:12:80  txqueuelen 1000  (Ethernet)
+        RX packets 145  bytes 18210 (17.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 98  bytes 15536 (15.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 656 (656.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 656 (656.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+其中网卡enp0s8对应的配置文件为:ifcfg-enp0s8
+[root@localhost network-scripts]# cat ifcfg-enp0s8
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp0s8
+UUID=93cd5347-8d31-49ae-88e2-e6c7b397b410
+DEVICE=enp0s8
+ONBOOT=yes
+其中ONBOOT默认值为no，需要将其由no改为yes。然后通过service network restart重启网络使配置生效。
+```
