@@ -36,11 +36,21 @@ psql -h localhost -U postgres -f createdb.sql
 ```
 
 #### 备份数据库
+* 备份全库
 ```
-pg_dump -h db_ip -U postgres database_name > dump.file
+pg_dump -h db_ip -U postgres db_name > dump.file
+```
+* 备份单表
+```
+pg_dump -h db_ip -U db_account -t table_name db_name > dump.sql
 ```
 
 #### 恢复数据库
+* 恢复全库
 ```
-psql -h localhost -U postgres -d database_name < dump.file
+psql -h db_ip -U postgres -d db_name < dump.file
+```
+* 恢复单表
+```
+psql -h db_ip -U db_account -d db_name < dump.sql
 ```
