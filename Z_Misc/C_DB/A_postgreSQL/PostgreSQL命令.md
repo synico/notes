@@ -1,6 +1,6 @@
-### Postgres
+## PostgreSQL命令
 
-#### 常用命令
+### 常用命令
 * 连接数据库
 ```
 psql -U username -h dbHost -p dbPort -d dbName
@@ -29,13 +29,15 @@ psql -U username -h dbHost -p dbPort -d dbName
 ```
 \q
 ```
+***
 
-#### 运行sql脚本
+### 运行sql脚本
 ```
 psql -h localhost -U postgres -f createdb.sql
 ```
+***
 
-#### 备份数据库
+### 备份数据库
 * 备份全库
 ```
 pg_dump -h db_ip -U postgres db_name > dump.file
@@ -44,8 +46,9 @@ pg_dump -h db_ip -U postgres db_name > dump.file
 ```
 pg_dump -h db_ip -U db_account -t table_name db_name > dump.sql
 ```
+***
 
-#### 恢复数据库
+### 恢复数据库
 * 恢复全库
 ```
 psql -h db_ip -U postgres -d db_name < dump.file
@@ -54,3 +57,4 @@ psql -h db_ip -U postgres -d db_name < dump.file
 ```
 psql -h db_ip -U db_account -d db_name < dump.sql
 ```
+***
