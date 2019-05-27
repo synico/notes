@@ -58,3 +58,14 @@ psql -h db_ip -U postgres -d db_name < dump.file
 psql -h db_ip -U db_account -d db_name < dump.sql
 ```
 ***
+
+### SQL命令
+* 修改数据库
+```
+ALTER DATABASE name RENAME TO new_name;
+ALTER DATABASE name OWNER TO new_owner;
+```
+* 删除数据库
+```
+DROP DATABASE [IF EXISTS] name;
+```
