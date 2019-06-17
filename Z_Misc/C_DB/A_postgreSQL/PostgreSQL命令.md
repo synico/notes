@@ -44,7 +44,7 @@ pg_dump -h db_ip -U postgres db_name > dump.file
 ```
 * 备份单表
 ```
-pg_dump -h db_ip -U db_account -t table_name db_name > dump.sql
+pg_dump -h db_ip -U db_account -d db_name -t table_name > dump.sql
 ```
 ***
 
