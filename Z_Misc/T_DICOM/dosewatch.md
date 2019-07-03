@@ -2,9 +2,14 @@
 ### Term
 * Computed Tomography (CT)
 * Magnetic Resonance Imaging (MRI)
+* Mammography (MG)
+* Radio Fluoroscopy (RF)
 * Cardiovascular & Interventional (CV/IR)
 * Digital Radiography (DR)
 * Dicom Conformance Statement (DCS)
+* Ultrasound (US)
+* X-Ray Angiography (XA)
+* CT Dose Index (CTDI)
 ***
 
 ### Vocabulary
