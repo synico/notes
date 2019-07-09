@@ -12,6 +12,11 @@ java.time中所有class都是不可变类，线程安全。
 
 ### LocalTime
 代表不含年月日，仅包含时间的日期，比如hh:mm:ss。
+#### 字符串转LocalTime
+```
+DateTimeFormatter localTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+LocalTime.parse("08:00:00", localTimeFormatter);
+```
 ***
 
 ### LocalDateTime
