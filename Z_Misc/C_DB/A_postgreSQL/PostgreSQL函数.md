@@ -30,3 +30,12 @@ select cast('12345' as int)
 ```
 select '12345'::int
 ```
+***
+
+### UUID函数
+默认安装的Postgres是不带UUID函数，需要手动安装
+```
+create extension "uuid-ossp";
+select uuid_generate_v4();
+```
+***
