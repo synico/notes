@@ -69,3 +69,17 @@ ALTER DATABASE name OWNER TO new_owner;
 ```
 DROP DATABASE [IF EXISTS] name;
 ```
+* 表索引
+```
+SELECT * FROM pg_indexes WHERE schemaname='public';
+SELECT * FROM pg_statio_all_indexes WHERE schemaname='public';
+```
+* 查看表
+```
+SELECT * FROM pg_tables WHERE schemaname='public';
+```
+* 查看视图
+```
+SELECT * FROM pg_views WHERE schemaname='public';
+```
+***
