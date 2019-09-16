@@ -73,4 +73,17 @@ DROP DATABASE [IF EXISTS] name;
 ```
 ALTER USER postgres WITH PASSWORD 'postgres';
 ```
+* 表索引
+```
+SELECT * FROM pg_indexes WHERE schemaname='public';
+SELECT * FROM pg_statio_all_indexes WHERE schemaname='public';
+```
+* 查看表
+```
+SELECT * FROM pg_tables WHERE schemaname='public';
+```
+* 查看视图
+```
+SELECT * FROM pg_views WHERE schemaname='public';
+```
 ***
