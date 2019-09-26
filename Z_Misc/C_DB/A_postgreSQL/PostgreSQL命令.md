@@ -82,4 +82,8 @@ SELECT * FROM pg_tables WHERE schemaname='public';
 ```
 SELECT * FROM pg_views WHERE schemaname='public';
 ```
+* 断开所有连接用户
+```
+SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname='dbname' AND pid<>pg_backend_pid();
+```
 ***
