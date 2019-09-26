@@ -36,6 +36,11 @@
 ***
 
 ### 核心注解
+#### @SpingBootApplication
+```
+org.springframework.boot.autoconfigure.SpringBootApplication
+```
+相当于@Configuration，@EnableAutoConfiguration和@ComponentScan三个注解同时使用。
 #### @Configuration
 ```
 org.springframework.context.annotation.Configuration

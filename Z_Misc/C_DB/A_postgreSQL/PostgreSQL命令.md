@@ -69,6 +69,10 @@ ALTER DATABASE name OWNER TO new_owner;
 ```
 DROP DATABASE [IF EXISTS] name;
 ```
+* 修改默认用户postgres密码
+```
+ALTER USER postgres WITH PASSWORD 'postgres';
+```
 * 表索引
 ```
 SELECT * FROM pg_indexes WHERE schemaname='public';

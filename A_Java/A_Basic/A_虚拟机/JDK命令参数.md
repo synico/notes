@@ -64,3 +64,12 @@ jmap -heap $PID
 -XX:+UseG1GC|G1垃圾回收器
 
 ***
+
+### java参数
+#### Xbootclasspath
+在执行`java -jar`时指定classpath。使用`java -jar`运行一个可执行的jar时，jar会覆盖`-cp`的值。即`-jar`后的jar优先级最高，所有环境变量和命令行指定的搜索路径都将被忽略，JVM AppClassloader将只会以jar为搜索范围。
+* `-Xbootclasspath`，完全取代基本核心的java class搜索路径。不常用，否则要重新写所有java核心class。
+* `-Xbootclasspath/a:`后缀，将classpath添加在核心class搜索路径后面。常用。
+* `-Xbootclasspath/p:`前缀，将classpath添加在核心class搜索路径前面。不常用，避免引起不必要的冲突。
+
+***
