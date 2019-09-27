@@ -60,7 +60,7 @@ psql -h db_ip -U db_account -d db_name < dump.sql
 ***
 
 ### SQL命令
-* 修改数据库
+* 修改数据库名称
 ```
 ALTER DATABASE name RENAME TO new_name;
 ALTER DATABASE name OWNER TO new_owner;
@@ -72,6 +72,10 @@ DROP DATABASE [IF EXISTS] name;
 * 修改默认用户postgres密码
 ```
 ALTER USER postgres WITH PASSWORD 'postgres';
+```
+* 修改表名称
+```
+ALTER TABLE my_table_latest RENAME TO my_table;
 ```
 * 表索引
 ```
