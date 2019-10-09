@@ -8,8 +8,10 @@ to_char(interval, text)|text|把间隔转成字符串|to_char(interval '15h 2m 1
 to_char(int, text)|text|把整数转成字符串|to_char(125, '999')
 to_char(double precision, text)|text|把实数或双精度转成字符串|to_char(125.8::real, '999D9')
 to_char(numeric, text)|text|把数字转成字符串|to_char(-128.8, '999D99S')
-to_date(text, text)|date|把字符串转成数字|to_number('12,454.8-', '99G999D9S')
+to_number(text, text)|numeric|把字符串转成数字|to_number('12,454.8-', '99G999D9S')
+to_date(text, text)|date|把字符串转成日期|to_date('05 Dec 2000', 'DD Mon YYYY')
 to_timestamp(text, text)|timestamp with time zone|把字符串转成时间戳|to_timestamp('05 Dec 2000', 'DD Mon YYYY')
+
 ***
 
 ### 数字转字符串
