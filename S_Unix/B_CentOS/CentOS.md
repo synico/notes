@@ -70,6 +70,18 @@ firewall-cmd --zone=public --remove-port=80/tcp --permanent
 ```
 ***
 
+### yum命令
+命令|功能
+:--|:--
+search|查找软件包
+list|列出所有可安装的软件包
+list updates|列出所有可更新的软件包
+list installed|列出所有已安装的软件包
+list extras|列出所有已安装但不在Yum Repository内的软件包
+info|列出所有软件包的信息
+info updates|列出所有可更新的软件包信息
+***
+
 ### 安装使用docker
 #### 通过rpm包安装docker
 ```
