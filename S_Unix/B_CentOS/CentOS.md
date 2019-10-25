@@ -80,6 +80,8 @@ list installed|列出所有已安装的软件包
 list extras|列出所有已安装但不在Yum Repository内的软件包
 info|列出所有软件包的信息
 info updates|列出所有可更新的软件包信息
+install file.rpm|安装rpm包，同时安装对应依赖包
+
 ***
 
 ### 安装使用docker
