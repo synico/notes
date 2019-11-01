@@ -94,4 +94,9 @@ SELECT * FROM pg_views WHERE schemaname='public';
 ```
 SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname='dbname' AND pid<>pg_backend_pid();
 ```
+* 查看库或表大小
+```
+SELECT pg_size_pretty(pg_database_size(my_database));
+SELECT pg_size_pretty(pg_table_size(my_table));
+```
 ***

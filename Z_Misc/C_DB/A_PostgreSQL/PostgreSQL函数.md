@@ -49,7 +49,7 @@ select '12345'::int
 ### COALESCE函数
 函数返回参数中的第一非null的值，要求参数中至少有一个是非null的，如果参数都是null会报错
 ```
-select COALESCE(null,null); //报错
+select COALESCE(null, null); //报错
 select COALESCE(null, null, now()::varchar, ''); //结果会得到当前时间
 select COALESCE(null, null, '', now()::varchar); //结果会得到''
 ```
@@ -60,5 +60,13 @@ select COALESCE(null, null, '', now()::varchar); //结果会得到''
 ```
 create extension "uuid-ossp";
 select uuid_generate_v4();
+```
+***
+
+### 时间函数
+#### interval转成秒
+```
+select extract(EPOCH from (t1 - t2)) from table;
+select date_part('epoch', (t1 - t2)) from table;
 ```
 ***
