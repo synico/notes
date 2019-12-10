@@ -22,3 +22,8 @@ secure|安全标志，指定后只有在使用SSL链接时才能将cookie发送�
 
 ### 服务器端处理Cookie
 服务器端可通过HttpServletRequest获取客户端发起的http请求中携带的Cookie信息。其中javax.servlet.http.Cookie封装了客户端发送来的Cookie对象。
+
+***
+
+### Web无状态解决方案
+浏览器与服务器间采用的是http协议，而http协议是无状态的。为了使http有状态，先后出现了四种技术，分别是 **隐藏表单域**，**URL重写**，**coookie**，**session**。
