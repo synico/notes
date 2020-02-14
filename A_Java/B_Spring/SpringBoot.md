@@ -82,3 +82,11 @@ org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfiguration,\
 * 在application文件中加入debug=true。
 * 如集成了spring-boot-starter-actuator，通过autoconfig端点可以直接查看。
 ***
+
+
+#### Temp
+
+* AutowiredAnnotationBeanPostProcessor
+* RequiredAnnotationBeanPostProcessor
+* CommonAnnotationBeanPostProcessor
+* ConfigurationPropertiesBindingPostProcessor
