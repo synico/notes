@@ -1,3 +1,15 @@
+### Serializable
+Serializable接口仅起标识作用，真正序列化的操作并不需要由该接口的实现来完成。
+* ObjectOutputStream将对象序列化
+* ObjectInputStream将对象反序列化
+* static和transient修饰的字段不会被序列化
+
+### Externalizable
+实现Externalizable接口
+* 实现类需要无参的构造函数
+* 需实现writeExternal()和readExternal()方法
+
+***
 
 ### Comparable与Comparator的区别
 * Comparable接口由待排序类在待排序类中定义，因为Comparable接口中唯一一个方法compareTo(T o) 隐含着比较的一个对象是自身。
