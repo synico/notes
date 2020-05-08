@@ -72,4 +72,8 @@ jmap -heap $PID
 * `-Xbootclasspath/a:`后缀，将classpath添加在核心class搜索路径后面。常用。
 * `-Xbootclasspath/p:`前缀，将classpath添加在核心class搜索路径前面。不常用，避免引起不必要的冲突。
 
+```
+java -Xbootclasspath/a:config -jar rcc-dosewatch-1.0.jar
+```
+
 ***
