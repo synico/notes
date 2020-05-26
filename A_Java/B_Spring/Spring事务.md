@@ -1,4 +1,4 @@
-## Spring事务隔离级别和传播级别
+## Spring事务
 
 ### 事务相关术语
 #### Dirty reads (脏读)
