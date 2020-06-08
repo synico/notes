@@ -27,4 +27,5 @@
 #### CGLIB (Code Generation Library)
 * 对目标对象是否基于接口无限制。
 * 能代理除private访问级别的方法。
+* final方法无法被通知到 (advise) ，即final方法不能被代理。
 * 在运行期，加载目标对象的class文件，通过修改其字节码生成子类来实现代理。
