@@ -12,17 +12,19 @@
 
 ***
 
-### AspectJ
+### AOP静态代理 (静态织入)
 
 ***
 
-### AOP的两种代理方式
-Spring中AOP默认使用Java动态代理(standard JDK dynamic proxies)来实现AOP代理，也可以指定使用CGLIB(Code Generation Library)实现AOP代理。
+### AOP动态代理 (动态织入)
+基于proxy的Spring AOP framework，在目标对象内部的调用不会被拦截。
 
-##### Java动态代理
-1. 代理的目标对象基于接口，并且仅能代理接口中声明的方法。
-2. 使用动态代理机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理。
+#### Java动态代理
+* 代理的目标对象基于接口，并且仅能代理接口中声明的方法。
+* 仅能代理public访问级别的方法。
+* 使用动态代理机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理。
 
-##### CGLIB
-1. 对目标对象是否基于接口无限制。
-2. 在运行期，加载目标对象的class文件，通过修改其字节码生成子类来实现代理。
+#### CGLIB (Code Generation Library)
+* 对目标对象是否基于接口无限制。
+* 能代理除private访问级别的方法。
+* 在运行期，加载目标对象的class文件，通过修改其字节码生成子类来实现代理。
