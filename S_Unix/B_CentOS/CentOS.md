@@ -17,6 +17,26 @@ yum makecache
 ```
 yum -y update
 ```
+
+***
+
+### 开机启动方式
+#### 当前启动模式
+```
+systemctl get-default
+```
+结果可能是图形 (graphic.target)，或者字符命令 (multi-user.target) 。
+
+#### 设置图形启动
+```
+systemctl set-default graphic.target
+```
+
+#### 设置命令启动
+```
+systemctl set-default multi-user.target
+```
+
 ***
 
 ### 防火墙
