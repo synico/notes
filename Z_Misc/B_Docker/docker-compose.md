@@ -25,3 +25,19 @@ docker-compose -f ~/data/sit/docker-compose-sit.yml up
 ```
 docker-compose -f ~/data/sit/docker-compose-sit.yml up -d
 ```
+
+***
+
+### 编排文件
+#### 定义时区
+* 方法一
+```
+environment:
+  - SET_CONTAINER_TIMEZONE=true
+  - CONTAINER_TIMEZONE=Asia/Shanghai
+```
+* 方法二
+```
+environment:
+  - TZ=Asia/Shanghai
+```
