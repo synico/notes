@@ -59,6 +59,22 @@ psql -h db_ip -U db_account -d db_name < dump.sql
 ```
 ***
 
+### 创建用户并授权
+* 使用超级用户登陆数据库，然后创建用户
+```
+CREATE USER testUser WITH PASSWORD '1qazxsw2';
+```
+* 将数据库权限授予testUser，但此时用户还是没有读写权限
+```
+GRANT ALL PRIVILEGES ON DATABASE testDB to testUser;
+```
+* 授予用户表权限
+```
+GRANT ALL PRIVILEGES ON all tables in schema public TO testUser; // 该SQL必须在所要操作的数据库里执行
+GRANT SELECT ON TABLE mytable TO testUser;
+```
+***
+
 ### SQL命令
 * 修改数据库名称
 ```
