@@ -16,13 +16,17 @@ npm install express -g
 ```
 #### 查看安装信息
 ```
+npm root -g   // 查看全局安装模块路径
 npm list -g   // 查看全局安装模块
 npm list  // 查看本地安装模块
 npm list typescript -g // 查看全局模块中安装的typescript信息
+npm view webpack version // 查看webpack在npm仓库上最新的可用版本
 ```
 #### 卸载模块
 ```
 npm uninstall express
+npm uninstall -S <package-name>
+npm uninstall -D <package-name>
 ```
 #### 更新模块
 ```
