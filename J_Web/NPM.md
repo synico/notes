@@ -70,3 +70,11 @@ npm config delete https-proxy
 ```
 
 ***
+
+### module.exports与exports
+|module.exports|exports
+：--|:--|:--
+返回值|模块对象本身 (类)，需要new对象以后使用|模块函数，可直接使用
+
+#### module.exports
+#### exports
