@@ -8,7 +8,7 @@ docker-compose -f ~/data/dev/docker-compose-dev.yml
 docker-compose --file ~/data/dev/docker-compose-dev.yml
 ```
 #### -p, --project-name name
-指定自选的项目名，而不使用默认值目录名为项目名。
+指定自选的项目名，而不使用默认值目录名为项目名。当多个docker-compose.yml位于同一目录时，一定要指定project name，否则会报orphan containers错误。
 ```
 docker-compose -p sit
 docker-compose --project-name sit
