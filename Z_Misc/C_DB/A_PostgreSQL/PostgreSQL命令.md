@@ -13,6 +13,13 @@ psql -U username -h dbHost -p dbPort -d dbName
 ```
 \l
 ```
+* 枚举模式 (schema)
+```
+\dnS
+```
+```
+SELECT * FROM PG_NAMESPACE;
+```
 * 枚举表
 ```
 \dt

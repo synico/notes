@@ -69,7 +69,7 @@ ALTER USER MAPPING FOR postgres SERVER remote_server
 IMPORT FOREIGN SCHEMA remote_schema
   FROM SERVER remote_server INTO local_schema;
 
-IMPORT FOREIGN SCHEMA remote_schema LIMIT TO user
+IMPORT FOREIGN SCHEMA remote_schema<public> LIMIT TO (remote_table<user_account>)
   FROM SERVER remote_server INTO local_schema;
 ```
 
