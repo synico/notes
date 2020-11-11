@@ -1,5 +1,21 @@
 ## 外部数据 (Foreign Data)
 
+### 安装插件依赖包
+Postgresql默认仅安装server后，需要另外安装postgresql-contrib包后才能使用外部数据插件。
+#### 在线安装
+```
+yum install -y postgresql-contrib
+```
+
+#### 离线安装
+```
+rpm -ivh libxslt-1.1.28-5.el7.x86_64.rpm --force --nodeps
+
+rpm -ivh postgresql11-contrib-11.7-1PGDG.rhel7.x86_64.rpm
+```
+
+***
+
 ### postgres_fdw (Foreign Data Wrapper)
 所有操作应切换至目标本地数据库。
 #### 安装插件

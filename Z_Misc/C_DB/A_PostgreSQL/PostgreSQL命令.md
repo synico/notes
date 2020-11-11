@@ -13,6 +13,10 @@ psql -U username -h dbHost -p dbPort -d dbName
 ```
 \l
 ```
+* 查看外部服务器
+```
+\des
+```
 * 枚举模式 (schema)
 ```
 \dnS
