@@ -89,3 +89,25 @@ zr和zm|一层一层打开和收起折叠，这两个命令会递减和递增变
 zR和zM|打开所有折叠，并设置foldlevel为最高级别；关闭所有折叠，设置foldlevel为0
 
 ***
+
+### set用法设置
+#### 配置文件
+命令|说明
+:--|:--
+set autoindent|插入模式下，每行按与上行同样的标准进行缩进
+set list|制表符显示为^I，用$标识行尾
+set readonly|文件只读，除非使用!可写
+set tabstop|指定tab缩进字符数目
+set showmatch|符号匹配
+
+#### 命令行
+命令|说明
+:--|:--
+:set showmatch|
+:set noshowmatch|
+:set tabstop=4|设置制表符长度为4
+:set encoding=utf-8|设置编码格式
+:set ff=unix|将文件格式转为unix格式
+:syntax on|开启语法高亮显示
+
+***

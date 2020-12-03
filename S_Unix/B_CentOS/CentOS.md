@@ -154,6 +154,7 @@ hostnamectl set-hostname nick.vbox.com
 或
 192.168.56.103    nick.vbox.com
 ```
+
 ***
 
 ### 安装网络工具
@@ -222,3 +223,5 @@ DEVICE=enp0s8
 ONBOOT=yes
 其中ONBOOT默认值为no，需要将其由no改为yes。然后通过service network restart重启网络使配置生效。
 ```
+
+***

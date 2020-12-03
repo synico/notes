@@ -40,6 +40,7 @@ SELECT * FROM PG_NAMESPACE;
 ```
 \q
 ```
+
 ***
 
 ### 运行sql脚本
@@ -57,6 +58,11 @@ pg_dump -h db_ip -U postgres db_name > dump.file
 ```
 pg_dump -h db_ip -U db_account -d db_name -t table_name > dump.sql
 ```
+* 备份全库表结构 (schema only)
+```
+pg_dump -h db_ip -U db_account -s -d db_name > dump.sql
+```
+
 ***
 
 ### 恢复数据库
@@ -68,6 +74,7 @@ psql -h db_ip -U postgres -d db_name < dump.file
 ```
 psql -h db_ip -U db_account -d db_name < dump.sql
 ```
+
 ***
 
 ### 创建用户并授权
@@ -84,6 +91,7 @@ GRANT ALL PRIVILEGES ON DATABASE testDB to testUser;
 GRANT ALL PRIVILEGES ON all tables in schema public TO testUser; // 该SQL必须在所要操作的数据库里执行
 GRANT SELECT ON TABLE mytable TO testUser;
 ```
+
 ***
 
 ### SQL命令
@@ -126,4 +134,5 @@ SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname='dbname' AN
 SELECT pg_size_pretty(pg_database_size(my_database));
 SELECT pg_size_pretty(pg_table_size(my_table));
 ```
+
 ***
