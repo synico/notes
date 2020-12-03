@@ -6,6 +6,7 @@ npm的包安装分为本地安装 (local) 和全局安装 (global)
 将安装包放在./node_modules下 (运行npm命令时所在的目录) ，可以通过require()来引入本地安装的包。
 ```
 npm install express
+npm install express@4.17.1 // 安装模块特定版本
 npm install --save (-S) express // 安装模块到项目node_modules目录下，并将模块依赖写入dependencies节点
 npm install --save-dev (-D) gulp // 安装模块到项目node_modules目录下，并将模块依赖写入devDependencies节点
 ```
@@ -21,6 +22,7 @@ npm list -g   // 查看全局安装模块
 npm list  // 查看本地安装模块
 npm list typescript -g // 查看全局模块中安装的typescript信息
 npm view webpack version // 查看webpack在npm仓库上最新的可用版本
+npm view webpack versions // 查看webpack在npm仓库上所有版本
 ```
 #### 卸载模块
 ```
