@@ -46,12 +46,10 @@ Ctrl + b $
 ### 窗格操作
 #### 划分窗格
 * 划分上下两个窗格
-
 ```
 tmux split-window
 ```
 * 划分左右两个窗格
-
 ```
 tmux split-window -h
 ```
@@ -88,3 +86,5 @@ tmux swap-pane -U
 tmux swap-pane -D
 ```
 
+#### 翻页
+先通过按`CTRL+B`，再按`[`进入翻屏模式，然后通过`PAGE UP`和`PAGE DOWN`按键实现上下翻页
