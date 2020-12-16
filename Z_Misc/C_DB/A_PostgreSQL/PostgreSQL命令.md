@@ -62,6 +62,10 @@ pg_dump -h db_ip -U db_account -d db_name -t table_name > dump.sql
 ```
 pg_dump -h db_ip -U db_account -s -d db_name > dump.sql
 ```
+* 备份全库除某表
+```
+pg_dump -h db_ip -U db_account -d db_name -T exclude_table > dump.sql
+```
 
 ***
 

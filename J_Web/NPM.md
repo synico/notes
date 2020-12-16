@@ -9,6 +9,8 @@ npm install express
 npm install express@4.17.1 // 安装模块特定版本
 npm install --save (-S) express // 安装模块到项目node_modules目录下，并将模块依赖写入dependencies节点
 npm install --save-dev (-D) gulp // 安装模块到项目node_modules目录下，并将模块依赖写入devDependencies节点
+npm install --no-optional // 安装模块并忽略可选依赖
+
 ```
 #### 全局安装
 将安装包放在/usr/local下或者node的安装目录lib/node_modules下，可以直接在命令行使用。
