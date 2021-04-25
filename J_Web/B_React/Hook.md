@@ -12,7 +12,9 @@ const [state, setState] = useState(initialState);
 ***
 
 ### useEffect
-副作用钩子，用于在函数组件中执行副作用操作。useEffect()函数接受两个参数。第一个参数是一个函数，用于执行异步操作；第二个参数是一个数组，用于给出Effect的依赖项，只要依赖项的值发生变化，useEffect就会执行，如果传入空数组，则Effect仅运行一次，如果省略该参数，则每次渲染时 (包括挂载和更新) 都会运行Effect。
+副作用钩子，用于在函数组件中执行副作用操作。useEffect()函数接受两个参数。
+* 第一个参数是一个函数，用于执行异步操作。该函数会在组件渲染到屏幕之后执行，即在每轮渲染结束后执行。
+* 第二个参数是一个数组，用于给出Effect的依赖项，只要依赖项的值发生变化，useEffect就会执行，如果传入空数组，则Effect仅运行一次，如果省略该参数，则每次渲染时 (包括挂载和更新) 都会运行Effect。
 * 如与React的class组件类比，可把useEffect Hook看作componentDidMount，componentDidUpdate和componenetWillUnmount这三个函数的组合。
 * useEffect如有副作用需要清除，则需返回一个函数。
 
@@ -54,6 +56,9 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 
 ### useCallback
 返回一个memoized回调函数。
+* 第一个参数为回调函数。
+* 第二个参数为依赖项数组。如果省略该参数，则回调函数每次都执行，如果传入空数组，则回调函数仅执行一次。
+* `useCallback(fn, deps)` 相当于`useMemo(() => fn, deps)`。
 
 ```
 const memoizedCallback = useCallback(fn, deps);
@@ -62,6 +67,30 @@ const memoizedCallback = useCallback(fn, deps);
 ***
 
 ### useMemo
+返回一个momoized值。定义一段函数逻辑是否重复执行。
+* 仅用来做性能优化。
+* 第一个参数为需要执行的函数，会在渲染期间执行。不要在这个函数内部执行与渲染无关的操作。
+* 第二个参数为依赖项数组。如果省略该参数，则函数每次都执行，如果传入空数组，则函数仅执行一次。
+
+```
+const memoizedValue = useMemo(() => fn, deps)
+```
+
+***
+
+### useMemo与useEffect
+* useMemo与useEffect的语法是一样的，第一个参数是要执行的逻辑函数，第二个参数是这个逻辑函数依赖的变量组成的数组。
+* useMemo与useEffect的执行时机是不一致的，useEffect执行的是副作用，所以一定是在渲染之后执行的，useMemo是需要有返回值的，而返回值可以直接参与渲染，所以useMemo是在渲染期间完成。
+
+***
+
+### useCallback与useMemo
+useCallback返回的是函数，只要用来缓存函数，因为函数式组件中的state的变化都会导致整个组件被重现刷新，此时用useCallback将函数进行缓存，减少渲染时性能损耗。而useMemo返回的是计算的结果值，用于缓存计算后的状态。
+
+***
+
+### memo与useMemo
+memo用来优化函数组件的重复渲染行为，当传入属性值都不变的情况下不会触发组件的重新渲染，否则会触发组件的重新渲染。memo针对的是一个组件的渲染是否重复执行，而useMemo则定义了一段函数逻辑是否重复执行。严格来说，不使用memo和useMemo不会导致业务逻辑发生变化，memo和useMemo只是用来做性能优化。
 
 ***
 
